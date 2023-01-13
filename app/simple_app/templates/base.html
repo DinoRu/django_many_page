@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SPAs page</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body data-host="{{ request.get_host }}" data-scheme="{{ request.scheme }}">
+	<div class="container">
+		<header>
+			<nav id="nav" class="nav">{% include 'components/_nav.html' %}</nav>
+		</header>
+		<main id="main">{% include page %}</main>
+		<footer class="footer">My Footer</footer>
+	</div>
+
+	<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
